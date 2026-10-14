@@ -1,0 +1,22 @@
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+build/
+android/.gradle/
+android/local.properties
+*.iml
+.idea/
+.DS_Store
+android/.kotlin/
+
+# Internal notes, specification, screenshots and measurements stay local.
+docs/
+PLAN.md
+# Generated audio samples.
+samples/*.wav
+samples/benchmark/
+# Built APKs are published as release assets, not committed.
+deliverables/
+# Model weights exceed GitHub's file limit: python3 tool/fetch_model.py
+assets/model/model.onnx
+assets/model/*.part

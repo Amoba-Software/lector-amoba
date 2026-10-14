@@ -1,0 +1,71 @@
+name: lector_amoba
+description: Lector local de Markdown con voces españolas Kokoro.
+publish_to: none
+version: 0.8.1+11
+environment:
+  sdk: ^3.13.3
+dependencies:
+  flutter:
+    sdk: flutter
+  sherpa_onnx: 1.13.8
+  just_audio: 0.10.6
+  audio_session: 0.2.4
+  file_picker: 13.1.0
+  path_provider: 2.1.6
+  crypto: 3.0.7
+  markdown: 7.3.1
+  html: 0.15.7
+  flutter_markdown_plus: 1.0.12
+  archive: 4.0.7
+  xml: 7.0.1
+  audio_service: 0.18.19
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: 6.0.0
+flutter:
+  uses-material-design: true
+  fonts:
+    - family: Nunito
+      fonts:
+        - asset: assets/fonts/Nunito.ttf
+  assets:
+    - assets/fonts/OFL.txt
+    - assets/model/
+    - assets/model/espeak-ng-data/
+    - assets/model/espeak-ng-data/lang/
+    - assets/model/espeak-ng-data/lang/aav/
+    - assets/model/espeak-ng-data/lang/art/
+    - assets/model/espeak-ng-data/lang/azc/
+    - assets/model/espeak-ng-data/lang/bat/
+    - assets/model/espeak-ng-data/lang/bnt/
+    - assets/model/espeak-ng-data/lang/ccs/
+    - assets/model/espeak-ng-data/lang/cel/
+    - assets/model/espeak-ng-data/lang/cus/
+    - assets/model/espeak-ng-data/lang/dra/
+    - assets/model/espeak-ng-data/lang/esx/
+    - assets/model/espeak-ng-data/lang/gmq/
+    - assets/model/espeak-ng-data/lang/gmw/
+    - assets/model/espeak-ng-data/lang/grk/
+    - assets/model/espeak-ng-data/lang/inc/
+    - assets/model/espeak-ng-data/lang/ine/
+    - assets/model/espeak-ng-data/lang/ira/
+    - assets/model/espeak-ng-data/lang/iro/
+    - assets/model/espeak-ng-data/lang/itc/
+    - assets/model/espeak-ng-data/lang/jpx/
+    - assets/model/espeak-ng-data/lang/map/
+    - assets/model/espeak-ng-data/lang/miz/
+    - assets/model/espeak-ng-data/lang/myn/
+    - assets/model/espeak-ng-data/lang/poz/
+    - assets/model/espeak-ng-data/lang/roa/
+    - assets/model/espeak-ng-data/lang/sai/
+    - assets/model/espeak-ng-data/lang/sem/
+    - assets/model/espeak-ng-data/lang/sit/
+    - assets/model/espeak-ng-data/lang/tai/
+    - assets/model/espeak-ng-data/lang/trk/
+    - assets/model/espeak-ng-data/lang/urj/
+    - assets/model/espeak-ng-data/lang/zle/
+    - assets/model/espeak-ng-data/lang/zls/
+    - assets/model/espeak-ng-data/lang/zlw/
+    - assets/model/espeak-ng-data/voices/!v/
+    - assets/licenses/
