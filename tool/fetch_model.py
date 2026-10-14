@@ -8,7 +8,10 @@ Usage: python3 tool/fetch_model.py
 """
 import hashlib
 import json
+import shutil
+import subprocess
 import sys
+import urllib.error
 import urllib.request
 from pathlib import Path
 
@@ -32,9 +35,15 @@ if target.exists() and target.stat().st_size == entry['bytes'] and digest(target
 url = f"{RELEASES}/{manifest['version']}/model.onnx"
 temporary = target.with_suffix('.onnx.part')
 print(f'Downloading {url}')
-with urllib.request.urlopen(url) as response, temporary.open('wb') as output:
-    while block := response.read(1 << 20):
-        output.write(block)
+try:
+    with urllib.request.urlopen(url) as response, temporary.open('wb') as output:
+        while block := response.read(1 << 20):
+            output.write(block)
+except urllib.error.URLError as error:
+    # python.org builds on macOS ship without system certificates; curl uses them.
+    if shutil.which('curl') is None:
+        sys.exit(f'Download failed: {error}')
+    subprocess.run(['curl', '-fL', '--progress-bar', '-o', str(temporary), url], check=True)
 if temporary.stat().st_size != entry['bytes'] or digest(temporary) != entry['sha256']:
     temporary.unlink()
     sys.exit('Downloaded model does not match assets/model/manifest.json.')
